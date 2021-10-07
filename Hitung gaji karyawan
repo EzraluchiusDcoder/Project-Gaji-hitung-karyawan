@@ -1,0 +1,107 @@
+percent= 100
+gol1= 5
+gol2= 10
+gol3= 15
+gaji_pokok= 300000
+
+sma= 2.5
+d1= 5
+d3= 20
+s1= 30
+jam=1
+bonus=3500
+
+#TGAJI GOLONGAN 1 & SMA
+hitung_tunjangan_gaji_gol1= gaji_pokok * gol1 / percent
+hitung_tunjangan_gaji_sma= gaji_pokok * sma / percent
+gaji_gol1_sma= gaji_pokok + hitung_tunjangan_gaji_gol1 +hitung_tunjangan_gaji_sma
+
+#TGAJI GOLONGAN 2 & SMA
+hitung_tunjangan_gaji_gol2= gaji_pokok * gol2 / percent
+hitung_tunjangan_gaji_sma= gaji_pokok * sma / percent
+gaji_gol2_sma= gaji_pokok + hitung_tunjangan_gaji_gol2 +hitung_tunjangan_gaji_sma
+
+
+#TGAJI GOLONGAN 3 & SMA
+hitung_tunjangan_gaji_gol3= gaji_pokok * gol3 / percent
+hitung_tunjangan_gaji_sma= gaji_pokok * sma / percent
+gaji_gol3_sma= gaji_pokok + hitung_tunjangan_gaji_gol3 +hitung_tunjangan_gaji_sma
+
+#GAJI GOLONGAN 1 & D1
+hitung_tunjangan_gaji_gol1= gaji_pokok * gol1 / percent
+hitung_tunjangan_gaji_d1= gaji_pokok * d1 / percent
+gaji_gol1_d1= gaji_pokok + hitung_tunjangan_gaji_gol1 +hitung_tunjangan_gaji_d1
+
+#GAJI GOLONGAN 2 & D1
+hitung_tunjangan_gaji_gol2= gaji_pokok * gol2 / percent
+hitung_tunjangan_gaji_d1= gaji_pokok * d1 / percent
+gaji_gol2_d1= gaji_pokok + hitung_tunjangan_gaji_gol2 +hitung_tunjangan_gaji_d1
+
+#GAJI GOLONGAN 3 & D1
+hitung_tunjangan_gaji_gol3= gaji_pokok * gol3 / percent
+hitung_tunjangan_gaji_d1= gaji_pokok * d1 / percent
+gaji_gol3_d1= gaji_pokok + hitung_tunjangan_gaji_gol3 +hitung_tunjangan_gaji_d1
+
+#GAJI GOLONGAN 1 & D3
+hitung_tunjangan_gaji_gol1= gaji_pokok * gol1 / percent
+hitung_tunjangan_gaji_d3= gaji_pokok * d3 / percent
+gaji_gol1_d3= gaji_pokok + hitung_tunjangan_gaji_gol1 +hitung_tunjangan_gaji_d3
+
+#GAJI GOLONGAN 2 & D3
+hitung_tunjangan_gaji_gol2= gaji_pokok * gol2 / percent
+hitung_tunjangan_gaji_d3= gaji_pokok * d3 / percent
+gaji_gol2_d3= gaji_pokok + hitung_tunjangan_gaji_gol2 +hitung_tunjangan_gaji_d3
+
+#GAJI GOLONGAN 3 & D3
+hitung_tunjangan_gaji_gol3= gaji_pokok * gol3 / percent
+hitung_tunjangan_gaji_d3= gaji_pokok * d3 / percent
+gaji_gol3_d3= gaji_pokok + hitung_tunjangan_gaji_gol3 +hitung_tunjangan_gaji_d3
+
+#GAJI GOLONGAN 1 & S1
+hitung_tunjangan_gaji_gol1= gaji_pokok * gol1 / percent
+hitung_tunjangan_gaji_s1= gaji_pokok * s1 / percent
+gaji_gol1_s1= gaji_pokok + hitung_tunjangan_gaji_gol1 +hitung_tunjangan_gaji_s1
+
+#GAJI GOLONGAN 2 & S1
+hitung_tunjangan_gaji_gol2= gaji_pokok * gol2 / percent
+hitung_tunjangan_gaji_s1= gaji_pokok * s1 / percent
+gaji_gol2_s1= gaji_pokok + hitung_tunjangan_gaji_gol2 +hitung_tunjangan_gaji_s1
+
+#GAJI GOLONGAN 3 & S1
+hitung_tunjangan_gaji_gol3= gaji_pokok * gol3 / percent
+hitung_tunjangan_gaji_s1= gaji_pokok * s1 / percent
+gaji_gol3_s1= gaji_pokok + hitung_tunjangan_gaji_gol3 +hitung_tunjangan_gaji_s1
+
+#==================================================================================#
+print("=======GAJI KARYAWAN==========")
+nama= input("Masukkan nama karyawan:")
+
+golongan_jabatan= input("Masukkan Golongan Jabatan [Golongan 1/Golongan 2/Golongan 3] :")
+if golongan_jabatan == "golongan 1":
+    tunjangan_jabatan= hitung_tunjangan_gaji_gol1
+elif golongan_jabatan == "golongan 2":
+     tunjangan_jabatan= hitung_tunjangan_gaji_gol2
+elif golongan_jabatan == "golongan 3":
+    tunjangan_jabatan= hitung_tunjangan_gaji_gol3
+
+pendidikan= input("Masukkan Tingkat Pendidikan [sma/d1/d3/s1] :")
+if pendidikan == "sma":
+   tunjangan_pendidikan= hitung_tunjangan_gaji_sma
+elif pendidikan == "d1":
+   tunjangan_pendidikan= hitung_tunjangan_gaji_d1
+elif pendidikan == "d3":
+    tunjangan_pendidikan= hitung_tunjangan_gaji_d3
+elif pendidikan == "s1":
+    tunjangan_pendidikan= hitung_tunjangan_gaji_s1
+
+input_jumlah= int(input("Masukkan Jumlah Jam Kerja Lembur : "))
+Jumlah_kerja= input_jumlah - 8
+Jumlah_bonus=  bonus * Jumlah_kerja
+
+total= tunjangan_jabatan + tunjangan_pendidikan + gaji_pokok + Jumlah_bonus
+print("==========================================================================")
+print("Karyawan yang bernama", nama)
+print("Tunjangan Jabatan :", +tunjangan_jabatan)
+print("Tunjangan pendidikan: ", +tunjangan_pendidikan)
+print("Honor lembur : ", Jumlah_bonus)
+print("Total gaji               Rp.", total)
